@@ -1,1 +1,0 @@
-# credit_scoring_logistic_regression
