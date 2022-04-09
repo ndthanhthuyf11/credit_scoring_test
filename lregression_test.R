@@ -3,8 +3,8 @@ library(tidyverse)
 library(tidyselect)
 library(pastecs)
 library(tibble)
+library(data.table)
 
-##Credit Scoring test
 df <- read.csv(".\\dataset\\mortgage.csv")
 View(df)
 #head(data)
@@ -46,4 +46,20 @@ m_step <- step(m, direction = "both", trace = FALSE)
 summary(m_step)
 
 # generate VIF 
-vif(logistic_step, merge_coef = TRUE)
+vif(m, merge_coef = TRUE)
+
+#get results of terms in regression
+g<-predict(m,type='terms',test)
+
+#function to pick top 3 reasons
+#works by sorting coefficient terms in equation
+# and selecting top 3 in sort for each loan scored
+ftopk<- function(x,top=3){
+  res=names(x)[order(x, decreasing = TRUE)][1:top]
+  paste(res,collapse=";",sep="")
+}
+# Application of the function using the top 3 rows
+topk=apply(g,1,ftopk,top=3)
+#add reason list to scored tets sample
+test<-cbind(test, topk)
+view(topk)
