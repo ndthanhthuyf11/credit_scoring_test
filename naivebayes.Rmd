@@ -1,0 +1,47 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(dtplyr)
+library(data.table)
+library(readr)
+library(tidyverse)
+library(magrittr)
+library(naivebayes)
+```
+```{r}
+df <- read.csv("dataset//creditset.csv")
+head(df, 5)
+```
+
+```{r}
+## extract a set to train the NN
+df_train <- df[1:1400, ]
+## select the test set
+df_test <- df[1401:2000, ]
+```
+
+```{r}
+summary(df_train)
+```
+```{r}
+prop_defaut = prop.table(table(df_train$default10yr))
+(prop_defaut)
+```
+```{r}
+model <- naive_bayes(as.factor(default10yr) ~ LTI + age, data = df_train)
+model
+```
+```{r}
+pred <- predict(model, df_test)
+pred_table <- table(pred, df_test$default10yr, dnn=c("Prediction","Actual"))
+pred_table
+```
+```{r}
+#pre_table <- as.numeric(pre_table)
+accuracy <- sum(diag(pred_table))/sum(pred_table)*100
+(paste("Accuracy of model:", accuracy))
+```
+
