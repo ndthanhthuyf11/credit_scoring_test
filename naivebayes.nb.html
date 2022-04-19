@@ -1793,13 +1793,13 @@ data.table 1.14.2 using 4 threads (see ?getDTthreads).  Latest news: r-datatable
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
 <pre class="r"><code>library(tidyverse)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogcGFja2FnZSDigJh0aWR5dmVyc2XigJkgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiA0LjEuM1xuUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxuLS0gQXR0YWNoaW5nIHBhY2thZ2VzIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSB0aWR5dmVyc2UgMS4zLjEgLS1cbsOiy4bFoSBnZ3Bsb3QyIDMuMy41ICAgICDDosuGxaEgZHBseXIgICAxLjAuOFxuw6LLhsWhIHRpYmJsZSAgMy4xLjYgICAgIMOiy4bFoSBzdHJpbmdyIDEuNC4wXG7DosuGxaEgdGlkeXIgICAxLjIuMCAgICAgw6LLhsWhIGZvcmNhdHMgMC41LjFcbsOiy4bFoSBwdXJyciAgIDAuMy40ICAgICBcbldhcm5pbmc6IHBhY2thZ2Ug4oCYZ2dwbG90MuKAmSB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDQuMS4zXG5XYXJuaW5nOiBwYWNrYWdlIOKAmHRpYmJsZeKAmSB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDQuMS4zXG5XYXJuaW5nOiBwYWNrYWdlIOKAmHRpZHly4oCZIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gNC4xLjNcbldhcm5pbmc6IHBhY2thZ2Ug4oCYcHVycnLigJkgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiA0LjEuM1xuV2FybmluZzogcGFja2FnZSDigJhkcGx5cuKAmSB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDQuMS4zXG5XYXJuaW5nOiBwYWNrYWdlIOKAmHN0cmluZ3LigJkgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiA0LjEuM1xuV2FybmluZzogcGFja2FnZSDigJhmb3JjYXRz4oCZIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gNC4xLjNcbi0tIENvbmZsaWN0cyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gdGlkeXZlcnNlX2NvbmZsaWN0cygpIC0tXG54IGRwbHlyOjpiZXR3ZWVuKCkgICBtYXNrcyBkYXRhLnRhYmxlOjpiZXR3ZWVuKClcbnggZHBseXI6OmZpbHRlcigpICAgIG1hc2tzIHN0YXRzOjpmaWx0ZXIoKVxueCBkcGx5cjo6Zmlyc3QoKSAgICAgbWFza3MgZGF0YS50YWJsZTo6Zmlyc3QoKVxueCBkcGx5cjo6bGFnKCkgICAgICAgbWFza3Mgc3RhdHM6OmxhZygpXG54IGRwbHlyOjpsYXN0KCkgICAgICBtYXNrcyBkYXRhLnRhYmxlOjpsYXN0KClcbnggcHVycnI6OnRyYW5zcG9zZSgpIG1hc2tzIGRhdGEudGFibGU6OnRyYW5zcG9zZSgpXG4ifQ== -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogcGFja2FnZSDigJh0aWR5dmVyc2XigJkgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiA0LjEuM1xuUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxuLS0gQXR0YWNoaW5nIHBhY2thZ2VzIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIHRpZHl2ZXJzZSAxLjMuMSAtLVxuw6LLhsWhIGdncGxvdDIgMy4zLjUgICAgIMOiy4bFoSBkcGx5ciAgIDEuMC44XG7DosuGxaEgdGliYmxlICAzLjEuNiAgICAgw6LLhsWhIHN0cmluZ3IgMS40LjBcbsOiy4bFoSB0aWR5ciAgIDEuMi4wICAgICDDosuGxaEgZm9yY2F0cyAwLjUuMVxuw6LLhsWhIHB1cnJyICAgMC4zLjQgICAgIFxuV2FybmluZzogcGFja2FnZSDigJhnZ3Bsb3Qy4oCZIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gNC4xLjNcbldhcm5pbmc6IHBhY2thZ2Ug4oCYdGliYmxl4oCZIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gNC4xLjNcbldhcm5pbmc6IHBhY2thZ2Ug4oCYdGlkeXLigJkgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiA0LjEuM1xuV2FybmluZzogcGFja2FnZSDigJhwdXJycuKAmSB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDQuMS4zXG5XYXJuaW5nOiBwYWNrYWdlIOKAmGRwbHly4oCZIHdhcyBidWlsdCB1bmRlciBSIHZlcnNpb24gNC4xLjNcbldhcm5pbmc6IHBhY2thZ2Ug4oCYc3RyaW5ncuKAmSB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDQuMS4zXG5XYXJuaW5nOiBwYWNrYWdlIOKAmGZvcmNhdHPigJkgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiA0LjEuM1xuLS0gQ29uZmxpY3RzIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIHRpZHl2ZXJzZV9jb25mbGljdHMoKSAtLVxueCBkcGx5cjo6YmV0d2VlbigpICAgbWFza3MgZGF0YS50YWJsZTo6YmV0d2VlbigpXG54IGRwbHlyOjpmaWx0ZXIoKSAgICBtYXNrcyBzdGF0czo6ZmlsdGVyKClcbnggZHBseXI6OmZpcnN0KCkgICAgIG1hc2tzIGRhdGEudGFibGU6OmZpcnN0KClcbnggZHBseXI6OmxhZygpICAgICAgIG1hc2tzIHN0YXRzOjpsYWcoKVxueCBkcGx5cjo6bGFzdCgpICAgICAgbWFza3MgZGF0YS50YWJsZTo6bGFzdCgpXG54IHB1cnJyOjp0cmFuc3Bvc2UoKSBtYXNrcyBkYXRhLnRhYmxlOjp0cmFuc3Bvc2UoKVxuIn0= -->
 <pre><code>Warning: package ‘tidyverse’ was built under R version 4.1.3
 Registered S3 methods overwritten by &#39;dbplyr&#39;:
   method         from
   print.tbl_lazy     
   print.tbl_sql      
--- Attaching packages ------------------------ tidyverse 1.3.1 --
+-- Attaching packages ----------------------------------------- tidyverse 1.3.1 --
 âˆš ggplot2 3.3.5     âˆš dplyr   1.0.8
 âˆš tibble  3.1.6     âˆš stringr 1.4.0
 âˆš tidyr   1.2.0     âˆš forcats 0.5.1
@@ -1811,7 +1811,7 @@ Warning: package ‘purrr’ was built under R version 4.1.3
 Warning: package ‘dplyr’ was built under R version 4.1.3
 Warning: package ‘stringr’ was built under R version 4.1.3
 Warning: package ‘forcats’ was built under R version 4.1.3
--- Conflicts --------------------------- tidyverse_conflicts() --
+-- Conflicts -------------------------------------------- tidyverse_conflicts() --
 x dplyr::between()   masks data.table::between()
 x dplyr::filter()    masks stats::filter()
 x dplyr::first()     masks data.table::first()
@@ -1848,13 +1848,210 @@ The following object is masked from ‘package:data.table’:
 
     tables</code></pre>
 <!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShjYXJldClcbmBgYCJ9 -->
+<pre class="r"><code>library(caret)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogcGFja2FnZSDigJhjYXJldOKAmSB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDQuMS4zXG5Mb2FkaW5nIHJlcXVpcmVkIHBhY2thZ2U6IGxhdHRpY2VcblxuQXR0YWNoaW5nIHBhY2thZ2U6IOKAmGNhcmV04oCZXG5cblRoZSBmb2xsb3dpbmcgb2JqZWN0IGlzIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6cHVycnLigJk6XG5cbiAgICBsaWZ0XG4ifQ== -->
+<pre><code>Warning: package ‘caret’ was built under R version 4.1.3
+Loading required package: lattice
+
+Attaching package: ‘caret’
+
+The following object is masked from ‘package:purrr’:
+
+    lift</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGYgPC0gcmVhZC5jc3YoXCJkYXRhc2V0Ly9jcmVkaXRzZXQuY3N2XCIpXG5oZWFkKGRmLCA1KVxuYGBgIn0= -->
+<pre class="r"><code>df &lt;- read.csv(&quot;dataset//creditset.csv&quot;)
+head(df, 5)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6NSwibmNvbCI6Niwic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbNSB4IDZdIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmd0eWlURG1pdUJpWUdCZ1ptQmhaR0pnWmdVeUdkaWNBd3lOVEkwWUdGaVlnRHhHQmhZR1RoQmRBVlFsREpJR1lsNGdaZ1ZMTWpBd2diVURWVVBGK0VDMHd3ZTFmV2NONnY4NVBEajc1SzNuemo4T3IvOHNMZFRnWUhCNGNtdWpoRTRNZzhPSGlHN1dwbzNNY1BXK1Ribzl1NEMwQjkrLyt4WC9menY0OTE2WmNPWC9Ud2UzQnc0THZSallIWXltVHVjU1lHQ0hxOSsvcXNQeVlOTnRoNTFMOXUyc3F2ZHkyQi95aGRzNjJkTmgrL1VsMlpyU1Z4ME9LdkpzM211MUI2YmVmbi9jeEs0elorN2FuOGpxc2ZFNWM4Mys0TXNlK1FZR0h2dERYay95bnFWRjJSODQ0anpSNTh4NUpMK2hBMGEwQUdITlM4eE5MUVl5Qk1DQkFoSGtTTTdKVE0wcnlVeUI4dGt5ODVMemMxT2hQT2JFZEJpVEpTYy9NUThtN0JQaUNXVnlwNlNtSlpibWxCZ2FWQmFoMmNkWmxGK3VCN01UNUVpbUJvakRXTkVkbHB5VFdBeHpHRXlRS3lXeEpGRXZyUWlvSDhqN2g2YUZQYitnSkRNL0Q2aUpTUmpxZldUTmpFVm9BdnlsZVNDWHBPZ21aNVRtWmVzYWdTeUFKZ2RHcU9zWW9lYkEyR3dRSzVuK1E0MWloWVZRYWw1NlpoNHNXRmh6RXBOU2M2QWNQcUNQd1I3V0t5akt6Q3VCK1FRb1dxeFhrbCtTQ0ZQSGxaeWZBeE1CKzQzaEh3Q1JHNmIrMmdJQUFBPT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["clientid"],"name":[1],"type":["int"],"align":["right"]},{"label":["income"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["age"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["loan"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["LTI"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["default10yr"],"name":[6],"type":["int"],"align":["right"]}],"data":[{"1":"1","2":"66155.93","3":"59.01702","4":"8106.532","5":"0.1225368","6":"0","_rn_":"1"},{"1":"2","2":"34415.15","3":"48.11715","4":"6564.745","5":"0.1907516","6":"0","_rn_":"2"},{"1":"3","2":"57317.17","3":"63.10805","4":"8020.953","5":"0.1399398","6":"0","_rn_":"3"},{"1":"4","2":"42709.53","3":"45.75197","4":"6103.642","5":"0.1429105","6":"0","_rn_":"4"},{"1":"5","2":"66952.69","3":"18.58434","4":"8770.099","5":"0.1309895","6":"1","_rn_":"5"}],"options":{"columns":{"min":{},"max":[10],"total":[6]},"rows":{"min":[10],"max":[10],"total":[5]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyNzcGxpdCB3aXRoIHJhdGlvIDc6M1xuZGZfdHJhaW4gPC0gZGZbMToxNDAwLCBdXG5kZl90ZXN0IDwtIGRmWzE0MDE6MjAwMCwgXVxuYGBgIn0= -->
+<pre class="r"><code>##split with ratio 7:3
+df_train &lt;- df[1:1400, ]
+df_test &lt;- df[1401:2000, ]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc3VtbWFyeShkZl90cmFpbilcbmBgYCJ9 -->
+<pre class="r"><code>summary(df_train)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgIGNsaWVudGlkICAgICAgICAgIGluY29tZSAgICAgICAgICAgYWdlICAgICAgICAgICAgIGxvYW4gICAgICAgICAgXG4gTWluLiAgIDogICAxLjAgICBNaW4uICAgOjIwMDYzICAgTWluLiAgIDoxOC4wOCAgIE1pbi4gICA6ICAgIDEuMzc4ICBcbiAxc3QgUXUuOiAzNTAuOCAgIDFzdCBRdS46MzIxNzkgICAxc3QgUXUuOjI5LjE3ICAgMXN0IFF1LjogMTg3Ny4wMjYgIFxuIE1lZGlhbiA6IDcwMC41ICAgTWVkaWFuIDo0NTI3MCAgIE1lZGlhbiA6NDEuODIgICBNZWRpYW4gOiAzOTA5LjkwNyAgXG4gTWVhbiAgIDogNzAwLjUgICBNZWFuICAgOjQ0OTc2ICAgTWVhbiAgIDo0MS4wNCAgIE1lYW4gICA6IDQzOTcuMjgyICBcbiAzcmQgUXUuOjEwNTAuMiAgIDNyZCBRdS46NTc1ODYgICAzcmQgUXUuOjUyLjkyICAgM3JkIFF1LjogNjM4OC40OTAgIFxuIE1heC4gICA6MTQwMC4wICAgTWF4LiAgIDo2OTk5NiAgIE1heC4gICA6NjMuOTMgICBNYXguICAgOjEzNzY2LjA1MSAgXG4gICAgICBMVEkgICAgICAgICAgICAgZGVmYXVsdDEweXIgICAgXG4gTWluLiAgIDo0LjkwN2UtMDUgICBNaW4uICAgOjAuMDAwMCAgXG4gMXN0IFF1Ljo0LjcxN2UtMDIgICAxc3QgUXUuOjAuMDAwMCAgXG4gTWVkaWFuIDo5LjkyOWUtMDIgICBNZWRpYW4gOjAuMDAwMCAgXG4gTWVhbiAgIDo5LjgwOGUtMDIgICBNZWFuICAgOjAuMTQ2NCAgXG4gM3JkIFF1LjoxLjQ3OGUtMDEgICAzcmQgUXUuOjAuMDAwMCAgXG4gTWF4LiAgIDoxLjk5OWUtMDEgICBNYXguICAgOjEuMDAwMCAgXG4ifQ== -->
+<pre><code>    clientid          income           age             loan          
+ Min.   :   1.0   Min.   :20063   Min.   :18.08   Min.   :    1.378  
+ 1st Qu.: 350.8   1st Qu.:32179   1st Qu.:29.17   1st Qu.: 1877.026  
+ Median : 700.5   Median :45270   Median :41.82   Median : 3909.907  
+ Mean   : 700.5   Mean   :44976   Mean   :41.04   Mean   : 4397.282  
+ 3rd Qu.:1050.2   3rd Qu.:57586   3rd Qu.:52.92   3rd Qu.: 6388.490  
+ Max.   :1400.0   Max.   :69996   Max.   :63.93   Max.   :13766.051  
+      LTI             default10yr    
+ Min.   :4.907e-05   Min.   :0.0000  
+ 1st Qu.:4.717e-02   1st Qu.:0.0000  
+ Median :9.929e-02   Median :0.0000  
+ Mean   :9.808e-02   Mean   :0.1464  
+ 3rd Qu.:1.478e-01   3rd Qu.:0.0000  
+ Max.   :1.999e-01   Max.   :1.0000  </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJvcF9kZWZhdXQgPSBwcm9wLnRhYmxlKHRhYmxlKGRmX3RyYWluJGRlZmF1bHQxMHlyKSlcbihwcm9wX2RlZmF1dClcbmBgYCJ9 -->
+<pre class="r"><code>prop_defaut = prop.table(table(df_train$default10yr))
+(prop_defaut)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG4gICAgICAgIDAgICAgICAgICAxIFxuMC44NTM1NzE0IDAuMTQ2NDI4NiBcbiJ9 -->
+<pre><code>
+        0         1 
+0.8535714 0.1464286 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI21vZGVsbGluZ1xubW9kZWwgPC0gbmFpdmVfYmF5ZXMoYXMuZmFjdG9yKGRlZmF1bHQxMHlyKSB+IExUSSArIGFnZSwgZGF0YSA9IGRmX3RyYWluKVxubW9kZWxcbmBgYCJ9 -->
+<pre class="r"><code>#modelling
+model &lt;- naive_bayes(as.factor(default10yr) ~ LTI + age, data = df_train)
+model</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG49PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PSBOYWl2ZSBCYXllcyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PSBcbiBcbiBDYWxsOiBcbm5haXZlX2JheWVzLmZvcm11bGEoZm9ybXVsYSA9IGFzLmZhY3RvcihkZWZhdWx0MTB5cikgfiBMVEkgKyBcbiAgICBhZ2UsIGRhdGEgPSBkZl90cmFpbilcblxuLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gXG4gXG5MYXBsYWNlIHNtb290aGluZzogMFxuXG4tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBcbiBcbiBBIHByaW9yaSBwcm9iYWJpbGl0aWVzOiBcblxuICAgICAgICAwICAgICAgICAgMSBcbjAuODUzNTcxNCAwLjE0NjQyODYgXG5cbi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIFxuIFxuIFRhYmxlczogXG5cbi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIFxuIDo6OiBMVEkgKEdhdXNzaWFuKSBcbi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIFxuICAgICAgXG5MVEkgICAgICAgICAgICAgMCAgICAgICAgICAxXG4gIG1lYW4gMC4wODc2OTYxMCAwLjE1ODU5NTQ1XG4gIHNkICAgMC4wNTU0OTg5OSAwLjAyMjUzMTMyXG5cbi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIFxuIDo6OiBhZ2UgKEdhdXNzaWFuKSBcbi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIFxuICAgICAgXG5hZ2UgICAgICAgICAgICAwICAgICAgICAgMVxuICBtZWFuIDQzLjYwOTg5MiAyNi4wNzIwNDBcbiAgc2QgICAxMi41NDQ4NDcgIDQuNzA5MjExXG5cbi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tXG4ifQ== -->
+<pre><code>
+=================================== Naive Bayes =================================== 
+ 
+ Call: 
+naive_bayes.formula(formula = as.factor(default10yr) ~ LTI + 
+    age, data = df_train)
+
+----------------------------------------------------------------------------------- 
+ 
+Laplace smoothing: 0
+
+----------------------------------------------------------------------------------- 
+ 
+ A priori probabilities: 
+
+        0         1 
+0.8535714 0.1464286 
+
+----------------------------------------------------------------------------------- 
+ 
+ Tables: 
+
+----------------------------------------------------------------------------------- 
+ ::: LTI (Gaussian) 
+----------------------------------------------------------------------------------- 
+      
+LTI             0          1
+  mean 0.08769610 0.15859545
+  sd   0.05549899 0.02253132
+
+----------------------------------------------------------------------------------- 
+ ::: age (Gaussian) 
+----------------------------------------------------------------------------------- 
+      
+age            0         1
+  mean 43.609892 26.072040
+  sd   12.544847  4.709211
+
+-----------------------------------------------------------------------------------</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyNldmFsdWF0aW9uXG5wcmVkIDwtIHByZWRpY3QobW9kZWwsIGRmX3Rlc3QpXG5gYGAifQ== -->
+<pre class="r"><code>##evaluation
+pred &lt;- predict(model, df_test)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogcHJlZGljdC5uYWl2ZV9iYXllcygpOiBtb3JlIGZlYXR1cmVzIGluIHRoZSBuZXdkYXRhIGFyZSBwcm92aWRlZCBhcyB0aGVyZSBhcmUgcHJvYmFiaWxpdHkgdGFibGVzIGluIHRoZSBvYmplY3QuIENhbGN1bGF0aW9uIGlzIHBlcmZvcm1lZCBiYXNlZCBvbiBmZWF0dXJlcyB0byBiZSBmb3VuZCBpbiB0aGUgdGFibGVzLlxuIn0= -->
+<pre><code>Warning: predict.naive_bayes(): more features in the newdata are provided as there are probability tables in the object. Calculation is performed based on features to be found in the tables.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJlZF90YWJsZSA8LSB0YWJsZShwcmVkLCBkZl90ZXN0JGRlZmF1bHQxMHlyLCBkbm49YyhcIlByZWRpY3Rpb25cIixcIkFjdHVhbFwiKSlcbnByZWRfdGFibGVcbmBgYCJ9 -->
+<pre class="r"><code>pred_table &lt;- table(pred, df_test$default10yr, dnn=c(&quot;Prediction&quot;,&quot;Actual&quot;))
+pred_table</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgIEFjdHVhbFxuUHJlZGljdGlvbiAgIDAgICAxXG4gICAgICAgICAwIDUyMiAgMjJcbiAgICAgICAgIDEgICAwICA1NlxuIn0= -->
+<pre><code>          Actual
+Prediction   0   1
+         0 522  22
+         1   0  56</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI3ByZV90YWJsZSA8LSBhcy5udW1lcmljKHByZV90YWJsZSlcbiNhY2N1cmFjeSA8LSBzdW0oZGlhZyhwcmVkX3RhYmxlKSkvc3VtKHByZWRfdGFibGUpKjEwMFxuKHBhc3RlKFwiQWNjdXJhY3kgb2YgbW9kZWw6XCIsIGFjY3VyYWN5KSlcbmBgYCJ9 -->
+<pre class="r"><code>#pre_table &lt;- as.numeric(pre_table)
+#accuracy &lt;- sum(diag(pred_table))/sum(pred_table)*100
+(paste(&quot;Accuracy of model:&quot;, accuracy))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQWNjdXJhY3kgb2YgbW9kZWw6IDk2LjMzMzMzMzMzMzMzMzNcIlxuIn0= -->
+<pre><code>[1] &quot;Accuracy of model: 96.3333333333333&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2NmbSBtYXRyaXggd2l0aCBjYXJldCBcbmhlYWQoZGZfdGVzdCRkZWZhdWx0MTB5ciwgMTApXG5gYGAifQ== -->
+<pre class="r"><code>#cfm matrix with caret 
+head(df_test$default10yr, 10)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAwIDAgMCAwIDAgMCAwIDAgMCAwXG4ifQ== -->
+<pre><code> [1] 0 0 0 0 0 0 0 0 0 0</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaGVhZChhcy5mYWN0b3IocHJlZCksIDEwKVxuYGBgIn0= -->
+<pre class="r"><code>head(as.factor(pred), 10)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAwIDAgMCAwIDAgMCAwIDAgMCAwXG5MZXZlbHM6IDAgMVxuIn0= -->
+<pre><code> [1] 0 0 0 0 0 0 0 0 0 0
+Levels: 0 1</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2ZtIDwtIGNvbmZ1c2lvbk1hdHJpeCgocHJlZCksIGFzLmZhY3RvcihkZl90ZXN0JGRlZmF1bHQxMHlyKSlcbmNmbVxuYGBgIn0= -->
+<pre class="r"><code>cfm &lt;- confusionMatrix((pred), as.factor(df_test$default10yr))
+cfm</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiQ29uZnVzaW9uIE1hdHJpeCBhbmQgU3RhdGlzdGljc1xuXG4gICAgICAgICAgUmVmZXJlbmNlXG5QcmVkaWN0aW9uICAgMCAgIDFcbiAgICAgICAgIDAgNTIyICAyMlxuICAgICAgICAgMSAgIDAgIDU2XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgICAgQWNjdXJhY3kgOiAwLjk2MzMgICAgICAgICBcbiAgICAgICAgICAgICAgICAgOTUlIENJIDogKDAuOTQ1LCAwLjk3NjkpXG4gICAgTm8gSW5mb3JtYXRpb24gUmF0ZSA6IDAuODcgICAgICAgICAgIFxuICAgIFAtVmFsdWUgW0FjYyA+IE5JUl0gOiAzLjc0NGUtMTUgICAgICBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4gICAgICAgICAgICAgICAgICBLYXBwYSA6IDAuODE1OCAgICAgICAgIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcbiBNY25lbWFyJ3MgVGVzdCBQLVZhbHVlIDogNy41NjJlLTA2ICAgICAgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgICAgICAgICAgU2Vuc2l0aXZpdHkgOiAxLjAwMDAgICAgICAgICBcbiAgICAgICAgICAgIFNwZWNpZmljaXR5IDogMC43MTc5ICAgICAgICAgXG4gICAgICAgICBQb3MgUHJlZCBWYWx1ZSA6IDAuOTU5NiAgICAgICAgIFxuICAgICAgICAgTmVnIFByZWQgVmFsdWUgOiAxLjAwMDAgICAgICAgICBcbiAgICAgICAgICAgICBQcmV2YWxlbmNlIDogMC44NzAwICAgICAgICAgXG4gICAgICAgICBEZXRlY3Rpb24gUmF0ZSA6IDAuODcwMCAgICAgICAgIFxuICAgRGV0ZWN0aW9uIFByZXZhbGVuY2UgOiAwLjkwNjcgICAgICAgICBcbiAgICAgIEJhbGFuY2VkIEFjY3VyYWN5IDogMC44NTkwICAgICAgICAgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuICAgICAgICdQb3NpdGl2ZScgQ2xhc3MgOiAwICAgICAgICAgICAgICBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4ifQ== -->
+<pre><code>Confusion Matrix and Statistics
+
+          Reference
+Prediction   0   1
+         0 522  22
+         1   0  56
+                                         
+               Accuracy : 0.9633         
+                 95% CI : (0.945, 0.9769)
+    No Information Rate : 0.87           
+    P-Value [Acc &gt; NIR] : 3.744e-15      
+                                         
+                  Kappa : 0.8158         
+                                         
+ Mcnemar&#39;s Test P-Value : 7.562e-06      
+                                         
+            Sensitivity : 1.0000         
+            Specificity : 0.7179         
+         Pos Pred Value : 0.9596         
+         Neg Pred Value : 1.0000         
+             Prevalence : 0.8700         
+         Detection Rate : 0.8700         
+   Detection Prevalence : 0.9067         
+      Balanced Accuracy : 0.8590         
+                                         
+       &#39;Positive&#39; Class : 0              
+                                         </code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCmxpYnJhcnkoZHRwbHlyKQ0KbGlicmFyeShkYXRhLnRhYmxlKQ0KbGlicmFyeShyZWFkcikNCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShtYWdyaXR0cikNCmxpYnJhcnkobmFpdmViYXllcykNCmBgYA0KYGBge3J9DQoNCmBgYA0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCmxpYnJhcnkoZHRwbHlyKQ0KbGlicmFyeShkYXRhLnRhYmxlKQ0KbGlicmFyeShyZWFkcikNCmxpYnJhcnkodGlkeXZlcnNlKQ0KbGlicmFyeShtYWdyaXR0cikNCmxpYnJhcnkobmFpdmViYXllcykNCmxpYnJhcnkoY2FyZXQpDQpgYGANCmBgYHtyfQ0KZGYgPC0gcmVhZC5jc3YoImRhdGFzZXQvL2NyZWRpdHNldC5jc3YiKQ0KaGVhZChkZiwgNSkNCmBgYA0KDQpgYGB7cn0NCiMjc3BsaXQgd2l0aCByYXRpbyA3OjMNCmRmX3RyYWluIDwtIGRmWzE6MTQwMCwgXQ0KZGZfdGVzdCA8LSBkZlsxNDAxOjIwMDAsIF0NCmBgYA0KDQpgYGB7cn0NCnN1bW1hcnkoZGZfdHJhaW4pDQpgYGANCmBgYHtyfQ0KcHJvcF9kZWZhdXQgPSBwcm9wLnRhYmxlKHRhYmxlKGRmX3RyYWluJGRlZmF1bHQxMHlyKSkNCihwcm9wX2RlZmF1dCkNCmBgYA0KYGBge3J9DQojbW9kZWxsaW5nDQptb2RlbCA8LSBuYWl2ZV9iYXllcyhhcy5mYWN0b3IoZGVmYXVsdDEweXIpIH4gTFRJICsgYWdlLCBkYXRhID0gZGZfdHJhaW4pDQptb2RlbA0KYGBgDQoNCmBgYHtyfQ0KIyNldmFsdWF0aW9uDQojcHJlZCA8LSBwcmVkaWN0KG1vZGVsLCBkZl90ZXN0KQ0KI3ByZWRfdGFibGUgPC0gdGFibGUocHJlZCwgZGZfdGVzdCRkZWZhdWx0MTB5ciwgZG5uPWMoIlByZWRpY3Rpb24iLCJBY3R1YWwiKSkNCiNwcmVkX3RhYmxlDQpgYGANCmBgYHtyfQ0KI3ByZV90YWJsZSA8LSBhcy5udW1lcmljKHByZV90YWJsZSkNCiNhY2N1cmFjeSA8LSBzdW0oZGlhZyhwcmVkX3RhYmxlKSkvc3VtKHByZWRfdGFibGUpKjEwMA0KIyhwYXN0ZSgiQWNjdXJhY3kgb2YgbW9kZWw6IiwgYWNjdXJhY3kpKQ0KYGBgDQoNCg0KYGBge3J9DQojY2ZtIG1hdHJpeCB3aXRoIGNhcmV0IA0KaGVhZChkZl90ZXN0JGRlZmF1bHQxMHlyLCAxMCkNCmhlYWQoYXMuZmFjdG9yKHByZWQpLCAxMCkNCmNmbSA8LSBjb25mdXNpb25NYXRyaXgoKHByZWQpLCBhcy5mYWN0b3IoZGZfdGVzdCRkZWZhdWx0MTB5cikpDQpjZm0NCmBgYA0KDQo=</div>
 
 
 

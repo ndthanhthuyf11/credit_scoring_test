@@ -10,6 +10,7 @@ library(readr)
 library(tidyverse)
 library(magrittr)
 library(naivebayes)
+library(caret)
 ```
 ```{r}
 df <- read.csv("dataset//creditset.csv")
@@ -17,9 +18,8 @@ head(df, 5)
 ```
 
 ```{r}
-## extract a set to train the NN
+##split with ratio 7:3
 df_train <- df[1:1400, ]
-## select the test set
 df_test <- df[1401:2000, ]
 ```
 
@@ -31,17 +31,29 @@ prop_defaut = prop.table(table(df_train$default10yr))
 (prop_defaut)
 ```
 ```{r}
+#modelling
 model <- naive_bayes(as.factor(default10yr) ~ LTI + age, data = df_train)
 model
 ```
+
 ```{r}
-pred <- predict(model, df_test)
-pred_table <- table(pred, df_test$default10yr, dnn=c("Prediction","Actual"))
-pred_table
+##evaluation
+#pred <- predict(model, df_test)
+#pred_table <- table(pred, df_test$default10yr, dnn=c("Prediction","Actual"))
+#pred_table
 ```
 ```{r}
 #pre_table <- as.numeric(pre_table)
-accuracy <- sum(diag(pred_table))/sum(pred_table)*100
-(paste("Accuracy of model:", accuracy))
+#accuracy <- sum(diag(pred_table))/sum(pred_table)*100
+#(paste("Accuracy of model:", accuracy))
+```
+
+
+```{r}
+#cfm matrix with caret 
+head(df_test$default10yr, 10)
+head(as.factor(pred), 10)
+cfm <- confusionMatrix((pred), as.factor(df_test$default10yr))
+cfm
 ```
 
