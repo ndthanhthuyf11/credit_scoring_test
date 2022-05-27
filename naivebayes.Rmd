@@ -56,4 +56,3 @@ head(as.factor(pred), 10)
 cfm <- confusionMatrix((pred), as.factor(df_test$default10yr))
 cfm
 ```
-

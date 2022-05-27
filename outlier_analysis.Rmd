@@ -1,0 +1,147 @@
+
+```{r}
+library(ISLR)
+library(tidyverse)
+library(tidyselect)
+library(pastecs)
+library(tibble)
+library(data.table)
+library(ggplot2)
+library(pwr)
+library(WebPower)
+library(stringr)
+#library(WebPower/lavaan)
+```
+
+
+```{r}
+df <- read.csv(".\\dataset\\mortgage.csv")
+##-----EDA process
+head(df, 5)
+str(df)
+```
+```{r}
+#descriptive analysis
+summary(df)
+```
+
+```{r}
+#remove col of id
+df<-select(df,-c("id"))
+head(df, 5)
+#check for missing values
+sum(is.na(df))
+```
+```{r}
+df <- df[filter <- !is.na(df$LTV_time),]
+dim(df)
+```
+
+```{r}
+boxplot(df)
+```
+It is obviously that there are outliers in the dataset, which may affect the model.
+
+```{r}
+#select numerical features
+num_var = c("balance_time", "LTV_time", "interest_rate_time", "hpi_time", "gdp_time", "uer_time", "balance_orig_time", "FICO_orig_time", "LTV_orig_time", "Interest_Rate_orig_time","hpi_orig_time")
+
+df_numerical<- df %>% select_if(names(.) %in% num_var)
+str(df_numerical)
+
+```
+https://stackoverflow.com/questions/4877357/how-to-plot-all-the-columns-of-a-data-frame-in-r  
+https://www.statisticssolutions.com/univariate-and-multivariate-outliers/#:~:text=A%20multivariate%20outlier%20is%20a,data%20to%20contain%20extreme%20cases.
+It is obviously that there are outliers in the dataset, which may affect the model. 
+balance_time, mat_time, LTV_orig_time, interest_rate_orig_time, hpi_orig_time, gdp_time
+```{r}
+par(mfrow=c(4,3),mar=c(0.7, 3, 2, 1.5)) 
+len_num <- length(names(df_numerical))
+for(i in 1:len_num){
+  mname <- substitute(df_numerical[,i])
+  boxplot(df_numerical[,i],main=names(df_numerical[i]))
+    }
+#dfplot
+```
+```{r}
+#plot categorical features
+`%!in%` <- Negate(`%in%`)
+df_categorical<- df %>% select_if(names(.) %!in% num_var)
+#str(df_categorical)
+par(mfrow=c(4,3),mar=c(2, 3, 2.5, 2)) 
+len_cat <- length(names(df_categorical))
+for(i in 1:len_cat){
+  mname <- substitute(df_categorical[,i])
+  hist(df_categorical[,i],main=names(df_categorical[i]))
+    }
+```
+
+
+```{r}
+#detect outlier
+outliers_balance_time = boxplot.stats(df$balance_time)
+outliers_LTV = boxplot.stats(df$LTV_time)
+
+#outliers
+#detect >19000 outlier values out of 622489 
+```
+
+```{r}
+##Detect with z-score
+#calculate the score
+#z_scores <- as.data.frame(sapply(df, function(df) (abs(df - mean(df))/sd(df))))
+#head(z_scores)
+```
+Z-scores can quantify the unusualness of an observation when your data follow the normal distribution. The further away an observation’s Z-score is from zero, the more unusual it is. A standard cut-off value for finding outliers are Z-scores of +/-3 or further from zero. 
+https://statisticsbyjim.com/basics/outliers/#:~:text=Using%20Z%2Dscores%20to%20Detect%20Outliers&text=A%20Z%2Dscore%20of%20zero,value%20that%20equals%20the%20mean.&text=The%20further%20away%20an%20observation's,3%20or%20further%20from%20zero .
+```{r}
+#function calculating z-score of a column
+z_score_cal <-function (col){
+  zcol <- abs(col - mean(col))/sd(col)
+}
+```
+
+```{r}
+df_1 <- df
+#len_df = length(names(df_1))
+
+##-----remove values whose z-score < 3
+
+#df_1 %>% select(names(.) %in% num_var) 
+#  df_1[z_score_cal(names(.)) < 3,]
+    
+#balance_time,  LTV_time, interest_rate_time, balance_orig_time, FICO_orig_time, LTV_orig_time, interest_rate_orig_time, hpi_orig_time. 
+
+df_1 <- df_1[z_score_cal(df_1$balance_time) < 3,]
+df_1 <- df_1[z_score_cal(df_1$LTV_time) < 3,]
+df_1 <- df_1[z_score_cal(df_1$interest_rate_time) < 3,]
+df_1 <- df_1[z_score_cal(df_1$FICO_orig_time) < 3,]
+df_1 <- df_1[z_score_cal(df_1$LTV_orig_time)< 3, ]
+df_1 <- df_1[z_score_cal(df_1$balance_orig_time)<3,]
+df_1 <- df_1[z_score_cal(df_1$Interest_Rate_orig_time)<3,]
+df_1 <- df_1[z_score_cal(df_1$hpi_orig_time)<3,]
+dim(df_1)
+
+```
+
+```{r}
+#plot to see the distribution after outlier removal
+boxplot(df_1)
+```
+
+Calculate sample size 
+```{r}
+prop_status = prop.table(table(df$status_time))
+(prop_status)
+```
+
+```{r}
+#chi = chisq.test(df$status_time)
+ wp.logistic(p0 = 0.043, p1 = 0.0024, alpha = 0.05, power = 0.8, alternative="two.sided", family="normal")
+```
+
+```{r}
+ pwr.p.test(h=0.2, sig.level=0.05, power=0.80, alternative="two.sided")
+```
+
+
